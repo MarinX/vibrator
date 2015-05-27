@@ -15,22 +15,26 @@ Port of Android C code (vibrator/vibrator.c) to Golang
     import (
 	    "fmt"
 	    "github.com/MarinX/vibrator"
+	    "time"
     )
 
     func main() {
 
 	    //Check if Android vibrator hardware exists
-	    if _, err := vibrator.VibratorExists(); err != nil {
-		    fmt.Println(err)
-		    return
+	    if !exists := vibrator.VibratorExists(); err != nil {
+		     fmt.Println("vibrator does not exist")
+		     return
 	    }
-
+	
 	    //Turn on Android vibrator for 1 second
 	    if _, err := vibrator.VibratorON(1000); err != nil {
 		    fmt.Println(err)
 		    return
 	    }
-
+	
+	    //Sleep
+	    time.Sleep(2 * time.Second)
+	    
 	    //Turn off Android vibrator
 	    if _, err := vibrator.VibratorOFF(); err != nil {
 		    fmt.Println(err)
