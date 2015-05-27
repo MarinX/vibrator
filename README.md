@@ -21,7 +21,7 @@ Port of Android C code (vibrator/vibrator.c) to Golang
     func main() {
 
 	    //Check if Android vibrator hardware exists
-	    if !exists := vibrator.VibratorExists(); err != nil {
+	    if !vibrator.VibratorExists(){
 		     fmt.Println("vibrator does not exist")
 		     return
 	    }
