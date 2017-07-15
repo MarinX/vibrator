@@ -1,15 +1,15 @@
-#Android vibrator for Go
+# Android vibrator for Go
 
-#Description
+# Description
 Port of Android C code (vibrator/vibrator.c) to Golang
 
-#Installation
+# Installation
     go get github.com/MarinX/vibrator
-#Notes
+# Notes
 * Requires root
 * Compile GOOS=linux GOARCH=arm go build
 
-#Example
+# Example
     package main
     
     import (
@@ -42,19 +42,20 @@ Port of Android C code (vibrator/vibrator.c) to Golang
 	    }
     }
 
-#Execute on Android
-###Compile:
+# Execute on Android
+### Compile:
     GOOS=linux GOARCH=arm go build
-###Push to android
+### Push to android
     adb push myprogram /data/local/tmp
-###Execute as root
+### Execute as root
     adb shell
     su
     cd /data/local/tmp
     chmod 777 myprogram
     ./myprogram
 
-#License
+# License
 This library is under the MIT License
-#Author
+
+# Author
 Marin Basic 
